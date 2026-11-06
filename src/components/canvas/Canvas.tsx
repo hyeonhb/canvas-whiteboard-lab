@@ -5,9 +5,13 @@ import type { RectangleProps } from '../../types/shape';
 
 function Canvas({
   shapes,
+  width = 400,
+  height = 250,
   ...rest
 }: {
   shapes: RectangleProps[],
+  width?: number,
+  height?: number,
 }) {
   const canvasId = useId();
 
@@ -28,7 +32,12 @@ function Canvas({
   }, [shapes, canvasId])
 
   return (
-    <canvas id={canvasId} className={styles.container} {...rest}>
+    <canvas
+      id={canvasId}
+      className={styles.container}
+      width={width}
+      height={height}
+      {...rest}>
       캔버스 연습장입니다.
     </canvas>
   )
