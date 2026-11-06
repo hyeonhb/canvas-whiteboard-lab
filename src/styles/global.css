@@ -12,3 +12,13 @@ body {
   align-items: center;
   justify-content: center;
 }
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-gap-10 {
+  display: flex;
+  gap: 10px;
+}
