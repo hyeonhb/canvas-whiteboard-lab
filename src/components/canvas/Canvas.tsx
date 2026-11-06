@@ -17,7 +17,10 @@ function Canvas({
       return;
     }
 
+    const {width, height} = canvas;
+    
     draw({
+      canvasSize: {width, height},
       context: canvas.getContext('2d') as CanvasRenderingContext2D,
       shapes,
     });
@@ -32,12 +35,17 @@ function Canvas({
 }
 
 function draw({
+  canvasSize,
   context,
   shapes
 } : {
+  canvasSize: {width: number, height: number},
   context: CanvasRenderingContext2D,
   shapes: RectangleProps[],
 }) {
+  context.fillStyle = 'white';
+  context.fillRect(0, 0, canvasSize.width, canvasSize.height)
+
   shapes.forEach(shape => {
     const {fill, x, y, width, height} = shape;
 
