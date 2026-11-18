@@ -1,4 +1,4 @@
-import { useEffect, useId } from 'react';
+import { useEffect, useRef } from 'react';
 import styles from './Canvas.module.css';
 // import clsx from 'clsx';
 import type { RectangleProps } from '../../types/shape';
@@ -13,11 +13,11 @@ function Canvas({
   width?: number,
   height?: number,
 }) {
-  const canvasId = useId();
+  const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
-    const canvas = document.getElementById(canvasId);
-    if (!(canvas instanceof HTMLCanvasElement)) {
+    const canvas = canvasRef.current;
+    if (!canvas) {
       return;
     }
 
@@ -29,11 +29,11 @@ function Canvas({
       shapes,
     });
     
-  }, [shapes, canvasId])
+  }, [shapes, canvasRef])
 
   return (
     <canvas
-      id={canvasId}
+      ref={canvasRef}
       className={styles.container}
       width={width}
       height={height}
