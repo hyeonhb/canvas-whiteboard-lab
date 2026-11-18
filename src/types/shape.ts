@@ -1,4 +1,4 @@
-export type RectangleProps = {
+export type Rectangle = {
   id: string;
   x: number;
   y: number;

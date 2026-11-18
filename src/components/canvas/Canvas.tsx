@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import styles from './Canvas.module.css';
 // import clsx from 'clsx';
-import type { RectangleProps } from '../../types/shape';
+import type { Rectangle } from '../../types/shape';
 
 function Canvas({
   shapes,
@@ -9,7 +9,7 @@ function Canvas({
   height = 250,
   ...rest
 }: {
-  shapes: RectangleProps[],
+  shapes: Rectangle[],
   width?: number,
   height?: number,
 }) {
@@ -54,7 +54,7 @@ function draw({
 } : {
   canvasSize: {width: number, height: number},
   context: CanvasRenderingContext2D,
-  shapes: RectangleProps[],
+  shapes: Rectangle[],
 }) {
   context.fillStyle = 'white';
   context.fillRect(0, 0, canvasSize.width, canvasSize.height)

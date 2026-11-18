@@ -2,10 +2,10 @@ import { useState, useId } from 'react';
 import Canvas from './components/canvas/Canvas';
 import styles from './App.module.css'
 import clsx from 'clsx';
-import type {RectangleProps} from './types/shape';
+import type {Rectangle} from './types/shape';
 
 function App() {
-  const [shapes, setShapes] = useState<RectangleProps[]>([
+  const [shapes, setShapes] = useState<Rectangle[]>([
     {
       id: useId(),
       x: 100,
