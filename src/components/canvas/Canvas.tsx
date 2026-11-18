@@ -21,11 +21,15 @@ function Canvas({
       return;
     }
 
+    const context = canvas.getContext('2d') as CanvasRenderingContext2D;
+    if (!context) {
+      return;
+    }
+
     const {width, height} = canvas;
-    
     draw({
       canvasSize: {width, height},
-      context: canvas.getContext('2d') as CanvasRenderingContext2D,
+      context,
       shapes,
     });
     
