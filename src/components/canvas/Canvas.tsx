@@ -33,7 +33,7 @@ function Canvas({
       shapes,
     });
     
-  }, [shapes, canvasRef])
+  }, [shapes, width, height, canvasRef])
 
   return (
     <canvas
