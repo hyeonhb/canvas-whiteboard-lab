@@ -44,8 +44,8 @@ function App() {
   }
 
   return (
-    <div className={clsx(styles.container, 'flex-center', 'flex-column', 'gap-10')}>
-      <div className={clsx('gap-10')}>
+    <div className={clsx(styles.container, 'flex-center', 'flex-column', 'flex-gap-10')}>
+      <div className={clsx('flex-gap-10')}>
         <button type="button" onClick={handleMoveClick}>Move</button>
         <button type="button" onClick={handleClearClick}>Clear</button>
       </div>
